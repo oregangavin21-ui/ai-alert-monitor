@@ -1,0 +1,74 @@
+[
+  {
+    "id": "incident_001",
+    "title": "Database connection failure - cascading service outage",
+    "description": "Primary database server became unreachable due to network misconfiguration, causing all dependent services to timeout",
+    "service": "payment-api",
+    "severity": "critical",
+    "root_cause": "Network switch misconfiguration caused interface to shut down, disrupting database connectivity",
+    "closure_notes": "Restarted network switch, verified routing tables, implemented automated failover, added monitoring alerts",
+    "resolution_time_minutes": 45,
+    "date": "2026-04-15",
+    "tags": ["network", "database", "connectivity"]
+  },
+  {
+    "id": "incident_002",
+    "title": "Memory leak in authentication service",
+    "description": "User-service gradually consuming more memory over 8 hours until OOM kill triggered",
+    "service": "user-service",
+    "severity": "high",
+    "root_cause": "Authentication token cache not properly evicting expired entries, causing unbounded memory growth",
+    "closure_notes": "Implemented LRU eviction policy on token cache, added memory usage monitoring, deployed memory limits",
+    "resolution_time_minutes": 120,
+    "date": "2026-04-10",
+    "tags": ["memory", "cache", "performance"]
+  },
+  {
+    "id": "incident_003",
+    "title": "Load balancer misconfiguration",
+    "description": "Traffic unevenly distributed across backend instances causing some servers to be overwhelmed",
+    "service": "api-gateway",
+    "severity": "high",
+    "root_cause": "Load balancer weights not updated after infrastructure scaling event",
+    "closure_notes": "Reconfigured load balancer weights, updated auto-scaling policies, implemented traffic distribution monitoring",
+    "resolution_time_minutes": 30,
+    "date": "2026-04-08",
+    "tags": ["load-balancer", "infrastructure", "scaling"]
+  },
+  {
+    "id": "incident_004",
+    "title": "Database query performance degradation",
+    "description": "Payment-api queries taking 3-5 seconds instead of typical 200ms, causing cascading timeouts",
+    "service": "payment-api",
+    "severity": "critical",
+    "root_cause": "Missing database indexes on frequently queried columns combined with query plan regression",
+    "closure_notes": "Added indexes on payment_id, user_id, and timestamp columns, optimized query plans, cleared query cache",
+    "resolution_time_minutes": 60,
+    "date": "2026-04-12",
+    "tags": ["database", "performance", "query-optimization"]
+  },
+  {
+    "id": "incident_005",
+    "title": "Timeout due to slow database queries",
+    "description": "Unable to establish database connection within timeout window due to query queue buildup",
+    "service": "payment-api",
+    "severity": "critical",
+    "root_cause": "Missing database indexes on frequently queried columns causing table scans",
+    "closure_notes": "Added proper indexes, optimized query execution plans, tested query performance under load",
+    "resolution_time_minutes": 55,
+    "date": "2026-04-18",
+    "tags": ["database", "indexes", "performance"]
+  },
+  {
+    "id": "incident_006",
+    "title": "Load balancer overwhelmed",
+    "description": "One backend instance marked unhealthy but not removed from pool, causing 50% traffic rejection",
+    "service": "api-gateway",
+    "severity": "high",
+    "root_cause": "One backend instance marked unhealthy but not removed from active pool in load balancer",
+    "closure_notes": "Fixed health check configuration, manually removed unhealthy instance, verified all servers responding",
+    "resolution_time_minutes": 25,
+    "date": "2026-04-20",
+    "tags": ["load-balancer", "health-check", "availability"]
+  }
+]

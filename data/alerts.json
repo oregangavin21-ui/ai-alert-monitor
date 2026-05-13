@@ -1,0 +1,26 @@
+[
+  {
+    "id": "alert_001",
+    "timestamp": "2026-05-13T10:30:00Z",
+    "severity": "critical",
+    "service": "payment-api",
+    "message": "Database connection timeout - unable to reach primary database server after 30 second wait",
+    "error_code": "DB_TIMEOUT_001"
+  },
+  {
+    "id": "alert_002",
+    "timestamp": "2026-05-13T11:45:00Z",
+    "severity": "high",
+    "service": "user-service",
+    "message": "Memory usage exceeds 85% threshold - possible memory leak detected in authentication module",
+    "error_code": "MEM_ALERT_002"
+  },
+  {
+    "id": "alert_003",
+    "timestamp": "2026-05-13T12:15:00Z",
+    "severity": "medium",
+    "service": "api-gateway",
+    "message": "High latency detected on downstream service call - response time averaging 5 seconds",
+    "error_code": "LATENCY_003"
+  }
+]

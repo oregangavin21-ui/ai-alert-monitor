@@ -1,0 +1,12 @@
+{
+  "name": "ai-alert-monitor",
+  "version": "1.0.0",
+  "description": "Node.js agentic AI prototype for alert monitoring and root cause analysis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["ai", "alerts", "incidents", "analysis", "nodejs"],
+  "author": "Alert Analyzer Agent",
+  "license": "MIT"
+}
